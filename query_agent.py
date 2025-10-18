@@ -3,7 +3,7 @@ import logging
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
-from langchain_google_genai import GoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
@@ -49,7 +49,7 @@ PROMPT = PromptTemplate(
 
 # Create retrieval QA chain with custom prompt
 qa_chain = RetrievalQA.from_chain_type(
-    llm=GoogleGenerativeAI(model="gemini-1.5-flash"),
+    llm=ChatGoogleGenerativeAI(model="gemini-2.0-flash-exp"),
     chain_type="stuff",
     retriever=vectorstore.as_retriever(search_kwargs={"k": 5}),
     return_source_documents=True,

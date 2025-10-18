@@ -21,8 +21,8 @@ def main():
     if not os.path.exists(".env"):
         print("⚠️  .env file not found. Creating template...")
         with open(".env", "w") as f:
-            f.write("OPENAI_API_KEY=your_openai_api_key_here\n")
-        print("Please add your OpenAI API key to .env file")
+            f.write("GOOGLE_API_KEY=your_google_api_key_here\n")
+        print("Please add your Google API key to .env file")
         sys.exit(1)
 
     # Start Flask app

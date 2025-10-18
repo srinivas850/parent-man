@@ -18,7 +18,10 @@ venv/
 # OS files
 .DS_Store
 Thumbs.db
-    
+
+# Data & cache
+faiss_index/
+data/
 
 # Logs
 *.log
